@@ -1,13 +1,31 @@
-﻿question,expected_answer,has_answer
-ต้องเตรียมอุปกรณ์อะไรสำหรับการกางเต็นท์?,ควรเตรียมเต็นท์ สมอบก เชือก ถุงนอนหรือผ้าห่ม และแผ่นรองนอน รวมถึงอุปกรณ์เดินป่าที่เหมาะสม,yes
-มีกฎอะไรเกี่ยวกับการทิ้งขยะ?,ไม่ควรทิ้งขยะหรือเศษอาหารไว้ในพื้นที่ และควรนำขยะออกจากพื้นที่หรือทิ้งในจุดที่อุทยานกำหนด,yes
-สามารถกางเต็นท์ที่ไหนก็ได้หรือไม่?,ควรกางเต็นท์เฉพาะบริเวณที่อุทยานกำหนดเป็นพื้นที่พักแรมหรือจุดกางเต็นท์,yes
-ควรทำอย่างไรหากหลงทาง?,ควรหยุด ตั้งสติ ตรวจสอบตำแหน่ง และติดต่อเจ้าหน้าที่ตามช่องทางของพื้นที่หากสามารถสื่อสารได้,yes
-ควรเตรียมตัวก่อนเดินป่าอย่างไร?,ควรศึกษาข้อมูลเส้นทาง ระยะทาง จุดพัก จุดน้ำ ข้อจำกัด และเตรียมอุปกรณ์ให้เหมาะกับเส้นทาง,yes
-มีสิ่งอำนวยความสะดวกอะไรบ้าง?,อาจมีห้องน้ำ จุดกางเต็นท์ ลานจอดรถ ศูนย์บริการนักท่องเที่ยว ร้านค้า หรือบริการอื่น แต่ต้องตรวจสอบจากเอกสารของพื้นที่,yes
-ควรปฏิบัติต่อสัตว์ป่าอย่างไร?,ไม่ควรให้อาหาร ไม่ควรเข้าใกล้หรือสัมผัส และควรรักษาระยะห่างจากสัตว์ป่า,yes
-What should I bring for camping?,"A tent, stakes, ropes, sleeping equipment, suitable clothing and shoes, water, a first-aid kit, a flashlight, rain protection, and trash bags.",yes
-What should hikers do to reduce environmental impact?,"Stay on designated trails, avoid disturbing wildlife, do not collect natural objects, reduce waste, and take trash out of the area.",yes
-อุทยานมีบริการ Wi-Fi ฟรีหรือไม่?,ไม่พบข้อมูลในเอกสาร,no
-ค่าเข้าอุทยานแห่งชาติ X เท่าไร?,ไม่พบข้อมูลในเอกสาร,no
-มีเบอร์โทรศัพท์ฉุกเฉินของอุทยาน X หรือไม่?,ไม่พบข้อมูลในเอกสาร,no
+question,expected_answer,has_answer,source_file
+ต้องเตรียมอุปกรณ์อะไรสำหรับการกางเต็นท์?,ควรเตรียมเต็นท์ สมอบก เชือก ถุงนอนหรือผ้าห่ม และแผ่นรองนอน รวมถึงอุปกรณ์เดินป่าที่เหมาะสม,yes,04_equipment.txt
+ควรกางเต็นท์ที่ไหนได้บ้าง?,ควรกางเต็นท์เฉพาะบริเวณที่อุทยานกำหนดเป็นพื้นที่พักแรมหรือจุดกางเต็นท์เท่านั้น ไม่ควรกางในเส้นทางเดินป่า ริมหน้าผา หรือพื้นที่น้ำหลาก,yes,03_camping_rules.txt
+มีกฎอะไรเกี่ยวกับการทิ้งขยะ?,ต้องเก็บขยะและตรวจสอบพื้นที่ให้สะอาดก่อนออกจากพื้นที่ ไม่ทิ้งเศษอาหาร พลาสติก เชือก หรืออุปกรณ์ไว้ในพื้นที่ธรรมชาติ,yes,03_camping_rules.txt
+ควรทำอย่างไรหากหลงทาง?,ควรหยุด ตั้งสติ ตรวจสอบตำแหน่งจากข้อมูลที่มี และติดต่อเจ้าหน้าที่ตามช่องทางของพื้นที่ ไม่ควรเดินสุ่มต่อไปเรื่อย ๆ,yes,05_hiking_safety.txt
+ควรเตรียมตัวก่อนเดินป่าอย่างไร?,ควรศึกษาข้อมูลเส้นทาง ระยะทาง ระดับความยาก จุดพัก จุดน้ำ และข้อจำกัดที่ประกาศโดยอุทยาน และเลือกเส้นทางที่เหมาะสมกับความสามารถ,yes,05_hiking_safety.txt
+มีสิ่งอำนวยความสะดวกอะไรบ้างในอุทยาน?,อาจมีห้องน้ำ จุดกางเต็นท์ ลานจอดรถ ศูนย์บริการนักท่องเที่ยว ร้านค้า หรือบริการอื่น แต่ต้องตรวจสอบจากเอกสารของพื้นที่นั้น,yes,06_facilities.txt
+ควรปฏิบัติต่อสัตว์ป่าอย่างไร?,ไม่ควรให้อาหาร ไม่ควรเข้าใกล้หรือพยายามจับสัตว์ และควรรักษาระยะห่างจากสัตว์ป่าเสมอ,yes,02_park_rules.txt
+ต้องทำอย่างไรเมื่อเกิดเหตุฉุกเฉิน?,ควรรักษาสติ ประเมินความปลอดภัยของบริเวณ ให้การช่วยเหลือเบื้องต้นหากมีผู้บาดเจ็บ และติดต่อเจ้าหน้าที่,yes,08_emergency.txt
+ควรแจ้งข้อมูลอะไรบ้างเมื่อเกิดอุบัติเหตุในป่า?,ควรแจ้งตำแหน่งโดยประมาณ จำนวนผู้ประสบเหตุ อาการสำคัญ ความเสี่ยงรอบตัว และวิธีที่เจ้าหน้าที่สามารถเข้าถึงจุดเกิดเหตุ,yes,08_emergency.txt
+ควรเตรียมอะไรสำหรับการปฐมพยาบาล?,ควรพกชุดปฐมพยาบาล ไฟฉาย แบตเตอรี่สำรอง น้ำ และอุปกรณ์สื่อสารที่จำเป็น,yes,08_emergency.txt
+ควรทำอย่างไรเพื่อลดผลกระทบต่อสิ่งแวดล้อม?,ควรเดินตามเส้นทางที่กำหนด ไม่เด็ดดอกไม้หรือเก็บของจากธรรมชาติ ลดขยะ และนำขยะออกจากพื้นที่,yes,09_environment.txt
+ข้อมูลค่าบริการต้องตรวจสอบจากที่ไหน?,ต้องอ้างอิงประกาศหรือเอกสารล่าสุดของอุทยานแต่ละแห่ง เนื่องจากค่าบริการมีโอกาสเปลี่ยนแปลง,yes,07_fees.txt
+ควรวางแผนเวลาเดินป่าอย่างไร?,ควรวางแผนให้มีช่วงเผื่อก่อนมืด และไม่ควรฝืนเดินต่อหากร่างกายไม่พร้อม ควรเผื่อพลังงานสำหรับการเดินทางกลับ,yes,05_hiking_safety.txt
+ควรทำอย่างไรหากฝนตกขณะเดินป่า?,ควรเพิ่มความระมัดระวังบริเวณลำธาร ทางลาด และหินที่เปียก หากเจ้าหน้าที่ประกาศปิดเส้นทางควรหยุดกิจกรรมและปฏิบัติตามคำสั่ง,yes,05_hiking_safety.txt
+ควรทำอย่างไรก่อนออกจากพื้นที่กางเต็นท์?,ต้องเก็บขยะและตรวจสอบพื้นที่ให้สะอาด ดับไฟหรือแหล่งความร้อนให้เรียบร้อย และตรวจสอบว่าไม่มีวัสดุที่ยังคุกรุ่น,yes,03_camping_rules.txt
+What should I bring for camping?,"A tent, stakes, ropes, sleeping bag or blanket, sleeping pad, and appropriate hiking gear",yes,04_equipment.txt
+What should hikers do to reduce environmental impact?,"Stay on designated trails, do not pick flowers or collect natural objects, minimize waste, and carry out all trash",yes,09_environment.txt
+What should you do if you get lost in the forest?,"Stop moving, stay calm, check your location using available information, and contact park staff through the area's communication channels",yes,05_hiking_safety.txt
+How should you handle food storage while camping?,Food and trash should not be left inside the tent unnecessarily. Containers should be closed and stored properly to avoid attracting wildlife,yes,03_camping_rules.txt
+What information should you tell someone before hiking?,You should inform someone not joining the trip about your itinerary including destination and estimated return time,yes,08_emergency.txt
+อุทยานมีบริการ Wi-Fi ฟรีหรือไม่?,ไม่พบข้อมูลในเอกสาร,no,none
+ค่าเข้าอุทยานแห่งชาติเขาใหญ่เท่าไร?,ไม่พบข้อมูลในเอกสาร,no,none
+มีเบอร์โทรศัพท์ฉุกเฉินของอุทยานสักแห่งไหม?,ไม่พบข้อมูลในเอกสาร,no,none
+ร้านอาหารในอุทยานเปิดกี่โมง?,ไม่พบข้อมูลในเอกสาร,no,none
+สามารถนำสุนัขเข้าอุทยานได้หรือไม่?,ไม่พบข้อมูลในเอกสาร,no,none
+อุทยานแห่งชาติใดดีที่สุดสำหรับถ่ายภาพนก?,ไม่พบข้อมูลในเอกสาร,no,none
+ราคาเช่าเต็นท์ในอุทยานคืนละเท่าไร?,ไม่พบข้อมูลในเอกสาร,no,none
+Can I bring my pet into the national park?,ไม่พบข้อมูลในเอกสาร,no,none
+Is there a restaurant or food stall inside the park?,ไม่พบข้อมูลในเอกสาร,no,none
+What is the emergency phone number for Khao Yai National Park?,ไม่พบข้อมูลในเอกสาร,no,none
