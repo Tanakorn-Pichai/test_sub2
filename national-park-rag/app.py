@@ -11,7 +11,7 @@ from google.genai import types
 from sentence_transformers import SentenceTransformer
 
 APP_TITLE = "🏕️ National Park Camping Guide"
-DATA_DIR = Path("data")
+DATA_DIR = Path(__file__).parent / "data"
 EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 GROQ_MODEL = "openai/gpt-oss-20b"
 GEMINI_MODEL = "gemini-3.8-flash"
