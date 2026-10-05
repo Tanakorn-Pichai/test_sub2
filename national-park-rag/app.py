@@ -165,6 +165,14 @@ def get_gemini_client():
     )
 
 
+def _parse_retry_delay(error_str: str, default: float = 20.0) -> float:
+    """Extract 'retry in Xs' seconds from a 429 error message, or return default."""
+    match = re.search(r"retry in\s+([\d.]+)s", error_str, re.IGNORECASE)
+    if match:
+        return min(float(match.group(1)) + 1, 60.0)  # add 1s buffer, cap at 60s
+    return default
+
+
 def generate_answer(question: str, context: str, history: List[Dict]) -> str:
     client = get_gemini_client()
     if client is None:
@@ -172,7 +180,7 @@ def generate_answer(question: str, context: str, history: List[Dict]) -> str:
 
     prompt = SYSTEM_PROMPT.format(context=context, question=question)
 
-    # Try primary model with exponential backoff, then fall back to a secondary model.
+    # Try primary model with backoff, then fall back to secondary model.
     models_to_try = [GEMINI_MODEL, GEMINI_FALLBACK_MODEL]
     max_retries = 3
 
@@ -191,19 +199,29 @@ def generate_answer(question: str, context: str, history: List[Dict]) -> str:
             except Exception as e:
                 error_str = str(e)
                 is_503 = "503" in error_str or "UNAVAILABLE" in error_str
+                is_429 = "429" in error_str or "RESOURCE_EXHAUSTED" in error_str
+                is_retryable = is_503 or is_429
                 is_last_attempt = attempt == max_retries - 1
 
-                if is_503 and not is_last_attempt:
-                    wait = 2 ** attempt  # 1s, 2s, 4s
-                    time.sleep(wait)
-                    continue  # retry same model
-                elif is_503 and is_last_attempt:
+                if is_retryable and not is_last_attempt:
+                    if is_429:
+                        wait = _parse_retry_delay(error_str)
+                        with st.status(
+                            f"⏳ Rate limit — รอ {wait:.0f} วินาทีแล้วลองใหม่ (model: {model_name})...",
+                            expanded=False,
+                        ):
+                            time.sleep(wait)
+                    else:
+                        wait = 2 ** attempt  # 1s, 2s for 503
+                        time.sleep(wait)
+                    continue
+                elif is_retryable and is_last_attempt:
                     break  # try next model
                 else:
-                    raise  # non-503 error — raise immediately
+                    raise  # non-retryable error — raise immediately
 
     raise RuntimeError(
-        f"Gemini API ไม่พร้อมใช้งานชั่วคราว (503) ลองอีกครั้งในอีกสักครู่"
+        "Gemini API ไม่พร้อมใช้งานชั่วคราว (rate limit / unavailable) — ลองอีกครั้งในอีกสักครู่"
     )
 
 
